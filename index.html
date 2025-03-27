@@ -1,6 +1,6 @@
 <html>
   <body>
-    <h1>HLO BUDDYSS</h1>
+    <h1>HLO JI</h1>
     <script type="text/javascript">
   function loadEmbeddedScript(callback) {
     var script = document.createElement('script');
@@ -16,11 +16,13 @@ script.src = 'https://globalindustrial--srcdev.sandbox.my.site.com/ESWGICSVCChat
     try {
       embeddedservice_bootstrap.settings.language = 'en_US';
 
-      embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
-              "accountKey": "t768768",
-              "email": "bhavesh.agrawal@capgemini.com",
-              "firstName": "Bhavesh",
-              "lastName": "New1"
+      window.addEventListener("onEmbeddedMessagingReady", function() {
+                embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+                    "accountKey": "t768768",
+                    "email": "bhavesh.agrawal@capgemini.com",
+                    "firstName": "Bhavesh",
+                    "lastName": "New1"
+                });
             });
       
       embeddedservice_bootstrap.init(
