@@ -1,36 +1,39 @@
 <html>
   <body>
-    <h1>HLO</h1>
+    <h1>HLOOOO</h1>
     <script type="text/javascript">
-  function loadEmbeddedScript(callback) {
-    var script = document.createElement('script');
-script.src = 'https://globalindustrial--srcdev.sandbox.my.site.com/ESWGICSVCChatbot1741784027375/assets/js/bootstrap.min.js';
-    script.type = 'text/javascript';
-    script.onload = callback;
-    script.onerror = function () {
-      console.error('Failed to load Embedded Messaging script.');
-    };
-    document.head.appendChild(script);
-  }
-  function initEmbeddedMessaging() {
-    try {
-      embeddedservice_bootstrap.settings.language = 'en_US';
-
-     
-                embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
-                    "accountKey": "t768768",
-                    "email": "bhavesh.agrawal@capgemini.com",
-                    "firstName": "Bhavesh",
-                    "lastName": "New1"
-                });
-          
-      
+      function loadEmbeddedScript(callback) {
+        var script = document.createElement('script');
+        script.src = 'https://globalindustrial--srcdev.sandbox.my.site.com/ESWGICSVCChatbot1741784027375/assets/js/bootstrap.min.js';
+        script.type = 'text/javascript';
+        script.onload = callback;
+        script.onerror = function () {
+          console.error('Failed to load Embedded Messaging script.');
+        };
+        document.head.appendChild(script);
+      }
+      function initEmbeddedMessaging() {
+        try {
+          embeddedservice_bootstrap.settings.language = 'en_US';
+          window.addEventListener("onEmbeddedMessagingReady", function () {
+          console.error("onEmbeddedMessagingReady");
+          try {
+            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+              "accountKey": "t768768",
+              "email": "bhavesh.agrawal@capgemini.com",
+              "firstName": "Bhavesh",
+              "lastName": "New1"
+            });
+          } catch (err) {
+            console.error('Error setting prechat fields: ', err);
+          }
+      });
       embeddedservice_bootstrap.init(
         '00DO3000009OERJ',
         'GIC_SVC_Chatbot',
-'https://globalindustrial--srcdev.sandbox.my.site.com/ESWGICSVCChatbot1741784027375',
+        'https://globalindustrial--srcdev.sandbox.my.site.com/ESWGICSVCChatbot1741784027375',
         {
-scrt2URL: 'https://globalindustrial--srcdev.sandbox.my.salesforce-scrt.com'
+          scrt2URL: 'https://globalindustrial--srcdev.sandbox.my.salesforce-scrt.com'
         }
       );
     } catch (err) {
@@ -40,5 +43,5 @@ scrt2URL: 'https://globalindustrial--srcdev.sandbox.my.salesforce-scrt.com'
   // Load the script and initialize
   loadEmbeddedScript(initEmbeddedMessaging);
 </script>
-  </body>
+</body>
 </html>
